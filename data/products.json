@@ -1,0 +1,257 @@
+{
+  "cover_assembly": {
+    "430": [
+      {
+        "partNumber": "G-BB4302-DCA",
+        "oemCrossReference": "5805 2540 0108, 5850 2540 0101",
+        "modelApplication": "Bharat Benz 2823C, 2828CH, 3528C, 3528CM, 4828R, 4828RT, 5028TT, 5528TT, 5032TT, 5532TT, 2532CM, 3532CM",
+        "specialFeatures": "Diaphragm spring design, Sheet metal cover for better cooling, Dynamically balanced",
+        "specs": "Engine Torque rating 900Nm to 1800Nm, Vehicle up to 30 Tonnes, Clamping Load 3265Kg to 3571Kg, Mounting hole PCD 450mm"
+      },
+      {
+        "partNumber": "G-E4305-DCA",
+        "oemCrossReference": "1430377100",
+        "modelApplication": "Eicher Pro 2823C, 2828CH, 3528C, 3528CM, 4828R, 4828RT, 5028TT, 5528TT, 5032TT, 5532TT, 2532CM, 3532CM, 8049, 8031, 6025 (9S)",
+        "specialFeatures": "Diaphragm spring design, Sheet metal cover, Stronger Diaphragm spring with 24 fingers, Thicker Pressure Plate",
+        "specs": "Engine Torque rating 900Nm to 1800Nm, Vehicle up to 30 Tonnes, Clamping Load 3265Kg to 3571Kg, Mounting hole PCD 450mm"
+      },
+      {
+        "partNumber": "G-M4311-DCA",
+        "oemCrossReference": "3400122201",
+        "modelApplication": "MAN F90, F2000",
+        "specialFeatures": "Diaphragm spring design, Sheet metal cover, Original equipment to MAN",
+        "specs": "Engine Torque rating 900Nm to 1800Nm, Vehicle up to 30 Tonnes, Clamping Load 3265Kg to 3571Kg"
+      }
+    ],
+    "395": [
+      {
+        "partNumber": "395mm(15.5) AL Diaphragm Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "AL Vehicles",
+        "specialFeatures": "Diaphragm spring design, AL specification",
+        "specs": "395mm diameter, Diaphragm Cover Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) Benz Diaphragm Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Benz Vehicles",
+        "specialFeatures": "Diaphragm spring design, Benz specification",
+        "specs": "395mm diameter, Diaphragm Cover Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) Mahindra Navistar Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Mahindra Navistar Vehicles",
+        "specialFeatures": "Diaphragm spring design, Mahindra Navistar specification",
+        "specs": "395mm diameter, Cover Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) Eicher Pro Diaphragm Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Eicher Pro Vehicles",
+        "specialFeatures": "Diaphragm spring design, Eicher Pro specification",
+        "specs": "395mm diameter, Diaphragm Assembly"
+      }
+    ],
+    "380": [
+      {
+        "partNumber": "380mm(15) Diaphragm Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Various Commercial Vehicles",
+        "specialFeatures": "Diaphragm spring design, Lightweight design",
+        "specs": "380mm diameter, Diaphragm Cover Assembly"
+      },
+      {
+        "partNumber": "380mm (15) Conventional Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Light Commercial Vehicles",
+        "specialFeatures": "Coil Spring Design, Conventional type",
+        "specs": "380mm diameter, Conventional Cover Assembly"
+      }
+    ],
+    "350": [
+      {
+        "partNumber": "G-T352-CCA-PT",
+        "oemCrossReference": "581225400101, 843108",
+        "modelApplication": "TATA LPK 1615TC, 1613, ULTRA 1518, BS-IV",
+        "specialFeatures": "Push type Clutch, Coil Spring Design, Sheet metal cover, Collector-Ring provided, Release levers supported on needle roller bearings, Dynamically balanced",
+        "specs": "Engine Torque rating 500Nm to 650Nm, Vehicle up to 20 Tonnes, Clamp Load 1320Kg, Mounting hole PCD 393.7mm"
+      },
+      {
+        "partNumber": "G-T353-CCA",
+        "oemCrossReference": "275225400105, ID 206097",
+        "modelApplication": "TATA 2515, 2516, 3015, 3516, 4018 BS-II, EICHER 30.25, 33.25, 35.31",
+        "specialFeatures": "Pull type Clutch Cover assembly, Coil Spring Design, Unique Wear Indicator and Adjustment Mechanism, Sheet metal release levers, Dynamically balanced",
+        "specs": "Engine Torque rating 500Nm to 650Nm, Vehicle up to 20 Tonnes, Clamp Load 1320Kg, Mounting hole PCD 393.7mm"
+      },
+      {
+        "partNumber": "352mm (14) Conventational Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Various Commercial Vehicles",
+        "specialFeatures": "Conventional type, Coil Spring Design",
+        "specs": "352mm diameter, Conventional Cover Assembly"
+      },
+      {
+        "partNumber": "352mm (14) Conventional CoverAssembly",
+        "oemCrossReference": "",
+        "modelApplication": "Various Commercial Vehicles",
+        "specialFeatures": "Conventional type, Coil Spring Design",
+        "specs": "352mm diameter, Conventional Cover Assembly"
+      }
+    ],
+    "360": [
+      {
+        "partNumber": "362mm (14.5) M & M Diaphragm Cover Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "M & M Vehicles",
+        "specialFeatures": "Diaphragm spring design, M & M specification",
+        "specs": "362mm diameter, Diaphragm Cover Assembly"
+      }
+    ]
+  },
+  "clutch_disc": {
+    "430": [
+      {
+        "partNumber": "G-E4306-CD",
+        "oemCrossReference": "3430286100, 3430300100, ID318935",
+        "modelApplication": "Eicher Pro 2823C, 2828CH, 3528C, 3528CM, 4828R, 4828RT, 5028TT, 5528TT, 5032TT, 5532TT, 2532CM, 3532CM, 8049, 8031, 6025 (9S)",
+        "specialFeatures": "Organic facings with cushion segment, Non-asbestos lining, Pre-damper Clutch disc, Valeo F510 Friction Lining, Dynamically balanced",
+        "specs": "Engine Torque rating 950Nm to 1550Nm, Max Rated Torque 2600Nm, Vehicles up to 30 tonnes, Hub spline 2\"X10 & 1.75\"X10, Tested for 50 lakh cycles at 150°C"
+      },
+      {
+        "partNumber": "430mm (17) Prima Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Prima Vehicles",
+        "specialFeatures": "Organic facings, Non-asbestos lining",
+        "specs": "430mm diameter, Disc Assembly"
+      },
+      {
+        "partNumber": "430mm (17) Benz Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Benz Vehicles",
+        "specialFeatures": "Organic facings, Non-asbestos lining",
+        "specs": "430mm diameter, Disc Assembly"
+      },
+      {
+        "partNumber": "430mm (17) Eicher Pro Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Eicher Pro Vehicles",
+        "specialFeatures": "Organic facings, Non-asbestos lining",
+        "specs": "430mm diameter, Disc Assembly"
+      }
+    ],
+    "395": [
+      {
+        "partNumber": "395mm(15.5) Mahindra Navistar Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Mahindra Navistar Vehicles",
+        "specialFeatures": "Disc Assembly for Mahindra Navistar",
+        "specs": "395mm diameter, Disc Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) 8 Pad Ceramic AL Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "AL Vehicles",
+        "specialFeatures": "8 Pad Ceramic design, AL specification, High friction coefficient",
+        "specs": "395mm diameter, Ceramic Clutch Disc Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) AL Organic Cushion Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "AL Vehicles",
+        "specialFeatures": "Organic facings with cushion segment, AL specification",
+        "specs": "395mm diameter, Organic Cushion Disc Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) Benz Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Benz Vehicles",
+        "specialFeatures": "Organic facings, Benz specification",
+        "specs": "395mm diameter, Clutch Disc Assembly"
+      },
+      {
+        "partNumber": "395mm(15.5) Ceramic & Organic Eicher Pro Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Eicher Pro Vehicles",
+        "specialFeatures": "Ceramic & Organic combination, Eicher Pro specification",
+        "specs": "395mm diameter, Ceramic & Organic Disc Assembly"
+      }
+    ],
+    "380": [
+      {
+        "partNumber": "380mm (15')AL Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "AL Vehicles",
+        "specialFeatures": "AL specification, Organic facings",
+        "specs": "380mm diameter, AL Clutch Disc Assembly"
+      },
+      {
+        "partNumber": "380mm (15) Ceramic Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Various Commercial Vehicles",
+        "specialFeatures": "Ceramic buttons have high co-efficient friction, Fan/Paddle type construction, Dynamically balanced",
+        "specs": "380mm diameter, Ceramic Clutch Disc Assembly, Tested for 50 lakh cycles at 150°C"
+      },
+      {
+        "partNumber": "380mm (15) Organic Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Light Commercial Vehicles",
+        "specialFeatures": "Organic facings with cushion segment, Non-asbestos lining, Dynamically balanced",
+        "specs": "380mm diameter, Organic Clutch Disc Assembly"
+      }
+    ],
+    "350": [
+      {
+        "partNumber": "G-T352-F510",
+        "oemCrossReference": "581225200101, 2752 2540 0105, ID 206097",
+        "modelApplication": "TATA SK/SFC 1616 - BSIII, SAK 1212, SE/SK 1616 BSIII, LPT 2513 BSIII, LPT 2518 (697), LPT 1616, LPO 1512, EICHER TERRA 16, 30.25, 33.25, 35.31",
+        "specialFeatures": "Organic facings with cushion segment, Non-asbestos lining, Clutch disc hub splines induction hardened, Damper springs not preloaded, Dynamically balanced",
+        "specs": "Engine Torque rating 500Nm to 650Nm, Rated Torque 132Kgm, Vehicle up to 20 Tonnes, Valeo F510 Friction Lining, Hub spline 1.75\" X10, Tested for 50 lakh cycles at 150°C"
+      },
+      {
+        "partNumber": "G-T352-BD / G-T353-BD / G-AL352-BD",
+        "oemCrossReference": "2752 2520 0106, ID 206096",
+        "modelApplication": "TATA 2515, 2516, 3015, 3516, 4018 (BSII), EICHER 30.25, 33.25, 35.31",
+        "specialFeatures": "Ceramic buttons have high co-efficient friction, Fan/Paddle type construction, Clutch disc hub splines induction hardened, Damper springs not preloaded, Dynamically balanced",
+        "specs": "Engine Torque rating 500Nm to 650Nm, Rated torque 132kgm, Vehicle up to 20 Tonnes, MIBA friction button thickness 4.5mm & 5.8mm, Hub spline 1.5\" X10 (AL GBS 50 Gearbox) & 1.75\" X10 (TATA/EICHER GBS 60 Gearbox), Tested for 50 lakh cycles at 150°C"
+      },
+      {
+        "partNumber": "352mm (14) Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Various Commercial Vehicles",
+        "specialFeatures": "Organic facings, Non-asbestos lining",
+        "specs": "352mm diameter, Clutch Disc Assembly"
+      }
+    ],
+    "360": [
+      {
+        "partNumber": "362mm (14.5) Benz Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "Benz Vehicles",
+        "specialFeatures": "Organic facings, Benz specification",
+        "specs": "362mm diameter, Benz Clutch Disc Assembly"
+      },
+      {
+        "partNumber": "362mm (14.5) M & M Clutch Disc Assembly",
+        "oemCrossReference": "",
+        "modelApplication": "M & M Vehicles",
+        "specialFeatures": "Organic facings, M & M specification",
+        "specs": "362mm diameter, M & M Clutch Disc Assembly"
+      }
+    ]
+  },
+  "repair_kits": {
+    "430": [],
+    "395": [],
+    "380": [],
+    "350": [],
+    "360": []
+  },
+  "fly_wheel": {
+    "430": [],
+    "395": [],
+    "380": [],
+    "350": [],
+    "360": []
+  }
+}
