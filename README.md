@@ -1,6 +1,6 @@
-# HAC - Hanka Autocenter Website
+# HAC - Harika Auto Center Website
 
-A stunning dark-themed website for HAC (Hanka Autocenter) showcasing premium auto parts including cover assemblies, clutch discs, repair kits, and flywheels.
+A stunning dark-themed website for HAC (Harika Auto Center) showcasing premium auto parts including cover assemblies, clutch discs, repair kits, and flywheels.
 
 ## Features
 
@@ -11,6 +11,8 @@ A stunning dark-themed website for HAC (Hanka Autocenter) showcasing premium aut
 - **Responsive Design**: Fully responsive for all device sizes
 - **Smooth Animations**: Beautiful animations using Framer Motion
 - **Excel Data Integration**: Ready for Excel data integration
+- **Theme Switcher**: 10 different color theme combinations
+- **Logo Popup**: Interactive logo popup with smooth animations
 
 ## Product Categories
 
@@ -62,6 +64,19 @@ hac-website/
 │   ├── products/
 │   │   └── page.tsx        # Products page
 │   └── globals.css         # Global styles
+├── components/
+│   ├── Navbar.tsx          # Navigation bar
+│   ├── LogoPopup.tsx       # Logo popup modal
+│   └── ProductImage.tsx    # Product image component
+├── contexts/
+│   └── ThemeContext.tsx    # Theme management
+├── lib/
+│   ├── imageMapping.ts     # Image path mapping
+│   └── imageProductMapping.ts  # Product-image mapping
+├── data/
+│   └── products.json       # Product data
+├── public/
+│   └── images/             # Product images
 ├── package.json
 ├── tsconfig.json
 ├── tailwind.config.ts
@@ -70,8 +85,24 @@ hac-website/
 
 ## Pages
 
-- **Home (`/`)**: Landing page with hero section and product categories
+- **Home (`/`)**: Landing page with hero section
+- **Home (`/home`)**: Main homepage with product categories
 - **Products (`/products`)**: Full product catalog with filtering and search
+- **Product Details**: Individual product pages with detailed information
+
+## Theme Options
+
+The website includes 10 different color theme combinations:
+1. Navy & White
+2. Emerald & Mint
+3. Purple & Lavender
+4. Red & White
+5. Ocean Blue
+6. Sunset Orange
+7. Mint Teal
+8. Deep Indigo
+9. Cherry Rose
+10. Golden Amber
 
 ## Contact
 
@@ -80,5 +111,4 @@ hac-website/
 
 ## License
 
-© 2025 HAC - Hanka Autocenter. All rights reserved.
-
+© 2025 HAC - Harika Auto Center. All rights reserved.
