@@ -66,6 +66,51 @@ interface ProductDisplay {
   index: number;
 }
 
+// Helper function to format list items consistently
+function formatListItems(text: string | undefined): string[] {
+  if (!text || !text.trim()) return [];
+  return text.split(',').map(item => item.trim()).filter(item => item.length > 0);
+}
+
+// Animation variants for smooth, unified animations
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1] // Custom cubic-bezier for smoothness
+    }
+  }
+};
+
+const slideVariants = {
+  hidden: (direction: number) => ({
+    opacity: 0,
+    x: direction * 40,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+};
+
 export default function ProductDisplayPage({ params }: PageProps) {
   const { category, size } = params;
   const { theme } = useTheme();
@@ -121,8 +166,8 @@ export default function ProductDisplayPage({ params }: PageProps) {
       <motion.section 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="pt-28 pb-10 px-6 relative overflow-hidden" 
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        className="pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 md:pb-10 px-4 sm:px-6 relative overflow-hidden" 
         style={{ 
           backgroundColor: 'var(--theme-bg-primary)',
           paddingLeft: 'var(--padding)', 
@@ -142,36 +187,36 @@ export default function ProductDisplayPage({ params }: PageProps) {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <Link 
               href={`/products/${category}`} 
-              className="inline-flex items-center mb-6 group transition-all duration-300 hover:translate-x-1"
+              className="inline-flex items-center mb-4 sm:mb-6 group transition-all duration-300 hover:translate-x-1"
               style={{ color: 'var(--theme-text-primary)' }}
             >
-              <ArrowLeft size={18} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
-              <span className="text-sm font-medium opacity-80 group-hover:opacity-100">Back to {categoryDisplayName}</span>
+              <ArrowLeft size={16} className="sm:w-[18px] sm:h-[18px] mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
+              <span className="text-xs sm:text-sm font-medium opacity-80 group-hover:opacity-100">Back to {categoryDisplayName}</span>
             </Link>
           </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="w-full"
           >
             <div className="relative">
-              {/* Decorative accent line */}
+              {/* Decorative accent line - hidden on mobile */}
               <div 
-                className="absolute -left-6 top-0 bottom-0 w-1 rounded-full opacity-30"
+                className="hidden sm:block absolute -left-6 top-0 bottom-0 w-1 rounded-full opacity-30"
                 style={{ backgroundColor: 'var(--theme-text-primary)' }}
               />
               
-              <div className="space-y-3 pl-6">
+              <div className="space-y-2 sm:space-y-3 pl-0 sm:pl-6">
                 {/* Category Badge */}
                 <div className="inline-block">
                   <span 
-                    className="text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full border"
+                    className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border"
                     style={{ 
                       color: 'var(--theme-text-primary)',
                       borderColor: 'rgba(255, 255, 255, 0.2)',
@@ -184,10 +229,10 @@ export default function ProductDisplayPage({ params }: PageProps) {
                 </div>
                 
                 {/* Main Title */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]" style={{ color: 'var(--theme-text-primary)' }}>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ color: 'var(--theme-text-primary)' }}>
                   <span className="block">{categoryDisplayName}</span>
                   <span 
-                    className="inline-block mt-2 text-2xl md:text-3xl lg:text-4xl font-light opacity-70"
+                    className="inline-block mt-1 sm:mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light opacity-70"
                     style={{ color: 'var(--theme-text-primary)' }}
                   >
                     {size}mm Diameter
@@ -195,13 +240,13 @@ export default function ProductDisplayPage({ params }: PageProps) {
                 </h1>
                 
                 {/* Subtitle with decorative elements */}
-                <div className="flex items-center gap-3 pt-2">
+                <div className="flex items-center gap-2 sm:gap-3 pt-1 sm:pt-2">
                   <div 
                     className="h-px flex-1 opacity-20"
                     style={{ backgroundColor: 'var(--theme-text-primary)' }}
                   />
                   <p 
-                    className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase whitespace-nowrap"
+                    className="text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase whitespace-nowrap"
                     style={{ color: 'var(--theme-text-primary)', opacity: 0.6 }}
                   >
                     Product Catalog
@@ -217,42 +262,51 @@ export default function ProductDisplayPage({ params }: PageProps) {
         </div>
       </motion.section>
 
-      {/* Zig-zag Product Display */}
+      {/* Product Display - Always show same sections for consistency */}
       {productDisplays.map((display, idx) => {
         const themeConfig = getThemeConfig(theme, idx);
         const isImageLeft = idx % 2 !== 0;
         const slideDirection = isImageLeft ? -1 : 1;
 
+        // Get product data or use defaults
+        const product = display.product;
+        const partNumber = product?.partNumber || display.imageAlt || 'Product Information';
+        const oemRef = product?.oemCrossReference?.trim() || 'Not Available';
+        const modelApp = product?.modelApplication?.trim() || 'Not Available';
+        const features = formatListItems(product?.specialFeatures);
+        const specs = formatListItems(product?.specs);
+
         return (
           <motion.section
             key={idx}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="h-screen flex items-center relative overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="min-h-screen lg:h-screen flex items-center relative overflow-hidden py-12 lg:py-0"
             style={{ backgroundColor: themeConfig.bg }}
           >
             {/* Decorative gradient overlay */}
-            <div 
+            <motion.div 
               className="absolute inset-0 opacity-5 pointer-events-none"
               style={{
                 background: `linear-gradient(${idx % 2 === 0 ? '135deg' : '45deg'}, transparent 0%, currentColor 50%, transparent 100%)`
               }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 0.05 }}
+              transition={{ duration: 1 }}
             />
             
-            <div className="max-w-7xl mx-auto w-full h-full px-6 py-8 relative z-10 flex items-center" style={{ paddingLeft: 'var(--padding)', paddingRight: 'var(--padding)' }}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center w-full h-full">
+            <div className="max-w-7xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 py-6 lg:py-8 relative z-10 flex items-center" style={{ paddingLeft: 'var(--padding)', paddingRight: 'var(--padding)' }}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center w-full h-full">
                 {/* Image Side */}
                 <motion.div 
-                  className={isImageLeft ? 'order-1' : 'order-2'}
-                  initial={{ opacity: 0, x: slideDirection * 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                  className={`${isImageLeft ? 'lg:order-1' : 'lg:order-2'} order-1`}
+                  custom={slideDirection}
+                  variants={slideVariants}
                 >
                   <motion.div 
-                    className="relative w-full h-[70vh] min-h-[600px] rounded-xl overflow-hidden border group"
+                    className="relative w-full h-[50vh] sm:h-[60vh] md:h-[65vh] lg:h-[70vh] min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] rounded-xl overflow-hidden border group"
                     style={{ 
                       backgroundColor: idx % 2 === 0 
                         ? 'rgba(0, 0, 0, 0.3)' 
@@ -261,167 +315,129 @@ export default function ProductDisplayPage({ params }: PageProps) {
                       backdropFilter: 'blur(10px)'
                     }}
                     whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                   >
                     <motion.div
-                      initial={{ scale: 1.1, opacity: 0.8 }}
+                      initial={{ scale: 1.05, opacity: 0.8 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
+                      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                     >
                       <ProductImage
                         src={display.image}
                         alt={display.imageAlt}
                         fill
-                        className="object-contain p-8 transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-contain p-4 sm:p-6 md:p-8 transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                       />
                     </motion.div>
                   </motion.div>
                 </motion.div>
 
-                {/* Text Side */}
+                {/* Text Side - Always show all sections */}
                 <motion.div 
-                  className={`${isImageLeft ? 'order-2' : 'order-1'} h-full flex flex-col justify-center overflow-y-auto`}
-                  initial={{ opacity: 0, x: -slideDirection * 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                  style={{ maxHeight: 'calc(100vh - 200px)' }}
+                  className={`${isImageLeft ? 'lg:order-2' : 'lg:order-1'} order-2 h-full flex flex-col justify-center`}
+                  custom={-slideDirection}
+                  variants={slideVariants}
                 >
-                  <div className="space-y-4">
-                    {/* Part Number - Prominent Title */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                      <h2 className="text-xl md:text-2xl lg:text-2xl font-bold mb-2 leading-tight" style={{ color: themeConfig.text }}>
-                        {display.product?.partNumber || display.imageAlt}
+                  <motion.div
+                    variants={containerVariants}
+                    className="space-y-4 sm:space-y-5 max-h-[calc(100vh-200px)] lg:max-h-[calc(100vh-200px)] overflow-y-auto pr-2 scrollbar-thin"
+                    style={{
+                      scrollbarColor: `${themeConfig.textMuted} transparent`
+                    }}
+                  >
+                    {/* Part Number - Always shown */}
+                    <motion.div variants={itemVariants}>
+                      <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 leading-tight break-words" style={{ color: themeConfig.text }}>
+                        {partNumber}
                       </h2>
                     </motion.div>
 
-                    {/* Model Application - Subtitle */}
-                    {display.product?.modelApplication && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                      >
-                        <p className="text-sm md:text-base leading-relaxed" style={{ color: themeConfig.textMuted }}>
-                          {display.product.modelApplication}
+                    {/* Model Application - Always shown */}
+                    <motion.div 
+                      variants={itemVariants}
+                      className="pb-3 sm:pb-4 border-b"
+                      style={{ borderColor: themeConfig.border }}
+                    >
+                      <h3 className="text-[10px] sm:text-xs font-bold uppercase mb-1.5 sm:mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
+                        MODEL APPLICATION
+                      </h3>
+                      <p className="text-xs sm:text-sm leading-relaxed break-words" style={{ color: themeConfig.text }}>
+                        {modelApp}
+                      </p>
+                    </motion.div>
+
+                    {/* OEM Cross Reference - Always shown */}
+                    <motion.div 
+                      variants={itemVariants}
+                      className="pb-3 sm:pb-4 border-b"
+                      style={{ borderColor: themeConfig.border }}
+                    >
+                      <h3 className="text-[10px] sm:text-xs font-bold uppercase mb-1.5 sm:mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
+                        OEM REFERENCE
+                      </h3>
+                      <p className="text-xs sm:text-sm leading-relaxed break-words" style={{ color: themeConfig.text }}>
+                        {oemRef}
+                      </p>
+                    </motion.div>
+
+                    {/* Special Features - Always shown */}
+                    <motion.div 
+                      variants={itemVariants}
+                      className="pb-3 sm:pb-4 border-b"
+                      style={{ borderColor: themeConfig.border }}
+                    >
+                      <h3 className="text-[10px] sm:text-xs font-bold uppercase mb-1.5 sm:mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
+                        SPECIAL FEATURES
+                      </h3>
+                      {features.length > 0 ? (
+                        <ul className="space-y-1 sm:space-y-1.5">
+                          {features.map((feature, featureIdx) => (
+                            <li 
+                              key={featureIdx} 
+                              className="flex items-start"
+                            >
+                              <span className="mr-2 mt-1 sm:mt-1.5 flex-shrink-0 text-xs" style={{ color: themeConfig.textMuted }}>•</span>
+                              <span className="text-xs sm:text-sm leading-relaxed flex-1 break-words" style={{ color: themeConfig.textMuted }}>
+                                {feature}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-xs sm:text-sm leading-relaxed italic" style={{ color: themeConfig.textMuted }}>
+                          Not Available
                         </p>
-                      </motion.div>
-                    )}
+                      )}
+                    </motion.div>
 
-                    {display.product && (
-                      <motion.div 
-                        className="space-y-4"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                      >
-                        {/* OEM Cross Reference */}
-                        {display.product.oemCrossReference && display.product.oemCrossReference.trim() && (
-                          <motion.div 
-                            className="pb-4 border-b" 
-                            style={{ borderColor: themeConfig.border }}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.7 }}
-                          >
-                            <h3 className="text-xs font-bold uppercase mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
-                              OEM REFERENCE
-                            </h3>
-                            <p className="text-xs md:text-sm leading-relaxed" style={{ color: themeConfig.text }}>
-                              {display.product.oemCrossReference}
-                            </p>
-                          </motion.div>
-                        )}
-
-                        {/* Special Features - Formatted as List */}
-                        {display.product.specialFeatures && display.product.specialFeatures.trim() && (
-                          <motion.div 
-                            className="pb-4 border-b" 
-                            style={{ borderColor: themeConfig.border }}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.8 }}
-                          >
-                            <h3 className="text-xs font-bold uppercase mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
-                              SPECIAL FEATURES
-                            </h3>
-                            <ul className="space-y-1">
-                              {display.product.specialFeatures.split(',').map((feature: string, featureIdx: number) => (
-                                <motion.li 
-                                  key={featureIdx} 
-                                  className="flex items-start"
-                                  initial={{ opacity: 0, x: -10 }}
-                                  whileInView={{ opacity: 1, x: 0 }}
-                                  viewport={{ once: true }}
-                                  transition={{ duration: 0.4, delay: 0.9 + featureIdx * 0.05 }}
-                                >
-                                  <span className="mr-2 mt-1" style={{ color: themeConfig.textMuted }}>•</span>
-                                  <span className="text-xs md:text-sm leading-relaxed flex-1" style={{ color: themeConfig.textMuted }}>
-                                    {feature.trim()}
-                                  </span>
-                                </motion.li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        )}
-
-                        {/* Specifications - Formatted List */}
-                        {display.product.specs && display.product.specs.trim() && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 1.0 }}
-                          >
-                            <h3 className="text-xs font-bold uppercase mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
-                              SPECIFICATIONS
-                            </h3>
-                            <ul className="space-y-1">
-                              {display.product.specs.split(',').map((spec: string, specIdx: number) => (
-                                <motion.li 
-                                  key={specIdx} 
-                                  className="flex items-start"
-                                  initial={{ opacity: 0, x: -10 }}
-                                  whileInView={{ opacity: 1, x: 0 }}
-                                  viewport={{ once: true }}
-                                  transition={{ duration: 0.4, delay: 1.1 + specIdx * 0.05 }}
-                                >
-                                  <span className="mr-2 mt-1" style={{ color: themeConfig.textMuted }}>•</span>
-                                  <span className="text-xs md:text-sm leading-relaxed flex-1" style={{ color: themeConfig.textMuted }}>
-                                    {spec.trim()}
-                                  </span>
-                                </motion.li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        )}
-                      </motion.div>
-                    )}
-
-                    {!display.product && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                      >
-                        <p className="text-lg md:text-xl leading-relaxed" style={{ color: themeConfig.textMuted }}>
-                          {display.imageAlt}
+                    {/* Specifications - Always shown */}
+                    <motion.div variants={itemVariants}>
+                      <h3 className="text-[10px] sm:text-xs font-bold uppercase mb-1.5 sm:mb-2 tracking-widest" style={{ color: themeConfig.textMuted, letterSpacing: '0.1em' }}>
+                        SPECIFICATIONS
+                      </h3>
+                      {specs.length > 0 ? (
+                        <ul className="space-y-1 sm:space-y-1.5">
+                          {specs.map((spec, specIdx) => (
+                            <li 
+                              key={specIdx} 
+                              className="flex items-start"
+                            >
+                              <span className="mr-2 mt-1 sm:mt-1.5 flex-shrink-0 text-xs" style={{ color: themeConfig.textMuted }}>•</span>
+                              <span className="text-xs sm:text-sm leading-relaxed flex-1 break-words" style={{ color: themeConfig.textMuted }}>
+                                {spec}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-xs sm:text-sm leading-relaxed italic" style={{ color: themeConfig.textMuted }}>
+                          Not Available
                         </p>
-                      </motion.div>
-                    )}
-                  </div>
+                      )}
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
               </div>
             </div>

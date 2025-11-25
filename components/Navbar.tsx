@@ -105,7 +105,7 @@ export default function Navbar() {
               href="/home" 
               className="text-2xl font-bold transition-colors duration-300 text-[var(--theme-text-primary)] hover:text-[var(--theme-bg-secondary)]"
             >
-              HAC – Harika Auto Center
+              Harika Auto Center
             </Link>
           </div>
           
